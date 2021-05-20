@@ -60,10 +60,10 @@ return false;*/
  * BONUS: use iteration method `.find()`
  ****************************************************************/
 function getChannelByName(channelName, channels) {
-/*let found = */ 
-let a = channels.find(element => element === channelName)
-//let a = channelName;
-return a;
+
+for (const channel of channels){
+  if ( channel["name"] === channelName) return channel
+}
 }
 // console.log(getChannelByName("PowerfulJRE", channels))
 
@@ -77,6 +77,10 @@ return a;
  ****************************************************************/
 function getChannelByVideoTitle(videoTitle, channels) {
   // Your code here
+  for (const channel of channels){
+    if ( channel["videos"] === videoTitle) 
+    return channel;
+  }
 }
 // console.log(getChannelByVideoTitle("The Universal S", channels));
 
