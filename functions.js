@@ -14,10 +14,9 @@ const channels = require("./channels.json");
  * - returns the name of the channel
  ****************************************************************/
 function getChannelName(channel) {
-  // Your code here
+return channel["name"];
 }
-
-// console.log(getChannelName(channels[0]));
+console.log(getChannelName(channels[0]));
 
 /**************************************************************
  * numberOfVideos(channel)
@@ -25,7 +24,7 @@ function getChannelName(channel) {
  * - returns the number of videos that channel has
  ****************************************************************/
 function numberOfVideos(channel) {
-  // Your code here
+  return channel["videos"].length;
 }
 // console.log(numberOfVideos(channels[0]))
 
@@ -40,9 +39,17 @@ function numberOfVideos(channel) {
  ****************************************************************/
 function channelHasVideo(videoTitle, channel) {
   // Your code here
+  for (const v of channel["videos"]){
+    if (v === videoTitle);
+    return true;
+  }
+  return false;
 }
-// console.log(channelHasVideo("The Universal S", channels[0]));
-// console.log(channelHasVideo("The Universal S", channels[1]));
+ //console.log(channelHasVideo("The Universal S", channels[1]));
+/*channel ["videos"].filter(function(vid){
+if (videoTitle === vid) return true;
+});
+return false;*/
 
 /**************************************************************
  * getChannelByName(channelName, channels):
@@ -53,7 +60,10 @@ function channelHasVideo(videoTitle, channel) {
  * BONUS: use iteration method `.find()`
  ****************************************************************/
 function getChannelByName(channelName, channels) {
-  // Your code here
+/*let found = */ 
+let a = channels.find(element => element === channelName)
+//let a = channelName;
+return a;
 }
 // console.log(getChannelByName("PowerfulJRE", channels))
 
