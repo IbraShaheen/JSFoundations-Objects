@@ -97,10 +97,18 @@ function getChannelByVideoTitle(videoTitle, channels) {
  * Hint: use string method `.includes()` and iteration method `.filter()`
  ****************************************************************/
 function searchChannels(query, channels) {
-  return channels.filter(channel=> channel.name.includes(namename=> namename === query));
-  return channels.filter(channel=> channel.description.includes(des=> des === query));
+return channels.filter(channel=> channel.name.includes(query) || channel.description.includes(query));
+//return channels.filter(channel=> channel.description.includes(des=> des === query));
+
+  /*let a = channels.filter(channel=> channel.name.includes(namename=> namename === query));
+  let b = channels.filter(channel=> channel.description.includes(des=> des === query));
+  if (a === ture) {return a}*/
+
 };
-console.log(searchChannels("the", channels))
+
+
+
+//console.log(searchChannels("the", channels))
 
 module.exports = {
   getChannelName,
